@@ -1,0 +1,26 @@
+import pygame
+
+
+
+# initialize the pygame module
+pygame.init()
+GAME_SPRITE={}
+BACKGROUN='gallery\\bg.jpg'
+WIDTH, HEIGHT = 500, 200
+WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
+
+# formatedBG = pygame.Surface((900, 400))
+# formatedBG.fill(pygame.color.Color(255, 100, 90, 0))
+
+# BG = pygame.image.load(os.path.abspath("assets/background-black.png"))
+# formatedBG = pygame.transform.scale(BG, (WIDTH, HEIGHT))
+
+GAME_SPRITE['background']=pygame.image.load(BACKGROUN).convert_alpha()
+run = True
+while run:
+    WINDOW.blit(GAME_SPRITE['background'], (0, 0))
+    pygame.display.update()
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run=False
